@@ -1,191 +1,191 @@
-<div class="row clearfix" [@routerTransition] *ngIf="rssServerFeeds.length">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row clearfix" [@routerTransition]>
 
-        <div *ngIf="!createNewRssServerFeedFlag">
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="btn bg-light-green waves-effect btn-sm pull-right my-button" 
-                            (click)="createNewRssServerFeed()">
-                        <span>Add Feed &nbsp;</span>
-                        <i class="fa fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-    
-            <!-- Show List -->
-            <div class="row">
-                <div class="col-md-6" *ngFor="let rssServerFeed of rssServerFeeds">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                {{rssServerFeed.title}} <small class="event-description">{{rssServerFeed.description}}</small>
-                            </h2>
-                            <ul class="header-dropdown m-r-0">
-                                <li>
-                                    <i class="fa fa-calendar"></i>
-                                </li>
-                                <li>
-                                    <span>{{rssServerFeed.pubDate | date:'short'}}</span>
-                                </li>
-                            </ul>
-                            <hr />
-                            <div class="row">
-                                <div class="col-md-6">
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <button type="button" class="btn bg-deep-purple waves-effect btn-sm" 
-                                            [routerLink]="['/app/server-feed/', rssServerFeed.id]">
-                                        <span>Details</span>
-                                        <i class="fa fa-arrow-circle-right"></i>
-                                    </button>
-                                </div>
+    <!--Create New Button-->
+    <div class="row" *ngIf="!createNewRssServerFeedFlag">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+            <span *ngIf="!rssServerFeeds.length">No feeds yet...</span>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+            <button type="button" class="btn bg-light-green waves-effect btn-sm pull-right my-button" 
+                    (click)="createNewRssServerFeed()">
+                <span>Add Feed &nbsp;</span>
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Show List -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="rssServerFeeds.length && !createNewRssServerFeedFlag">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let rssServerFeed of rssServerFeeds">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            {{rssServerFeed.title}} <small class="event-description">{{rssServerFeed.description}}</small>
+                        </h2>
+                        <ul class="header-dropdown m-r-0">
+                            <li>
+                                <i class="fa fa-calendar"></i>
+                            </li>
+                            <li>
+                                <span>{{rssServerFeed.pubDate | date:'short'}}</span>
+                            </li>
+                        </ul>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button type="button" class="btn bg-deep-purple waves-effect btn-sm" 
+                                        [routerLink]="['/app/server-feed/', rssServerFeed.id]">
+                                    <span>Details</span>
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!--Create New-->
-        <div *ngIf="createNewRssServerFeedFlag">
-            
-            <!--Close Button-->
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="btn bg-black waves-effect btn-sm pull-right my-button" 
-                            (click)="closeCreatingNewRssServerFeed()">
-                        <span>Close &nbsp;</span>
-                        <i class="fa fa-close"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <form [formGroup]="newFeedForm" role="form" class="form-horizontal">
-
-                        <!--Title-->
-                        <div class="form-group row" >
-                            <div class="col-sm-1 col-sm-offset-1" >
-                              <label for="title_id" class="control-label">Title:</label>
-                            </div>
-                            <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['title'].valid && newFeedForm.controls['title'].touched}">
-                                <input type="text"
-                                       class="form-control"
-                                       id="title_id"
-                                       placeholder="Title"
-                                       formControlName="title"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-7 col-sm-offset-2">
-                                <div *ngIf="newFeedForm.controls['title'].touched
-                                            && newFeedForm.controls['title'].hasError('required')"
-                                    class="alert alert-danger">
-                                        Must enter title
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Author-->
-                        <div class="form-group row" >
-                            <div class="col-sm-1 col-sm-offset-1" >
-                              <label for="author_id" class="control-label">Author:</label>
-                            </div>
-                            <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['author'].valid && newFeedForm.controls['author'].touched}">
-                                <input type="text"
-                                       class="form-control"
-                                       id="author_id"
-                                       placeholder="Author"
-                                       formControlName="author"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-7 col-sm-offset-2">
-                                <div *ngIf="newFeedForm.controls['author'].touched
-                                            && newFeedForm.controls['author'].hasError('required')"
-                                    class="alert alert-danger">
-                                        Must enter author
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Description-->
-                        <div class="form-group row" >
-                            <div class="col-sm-1 col-sm-offset-1" >
-                              <label for="description_id" class="control-label">Description:</label>
-                            </div>
-                            <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['description'].valid && newFeedForm.controls['description'].touched}">
-                                <input type="text"
-                                       class="form-control"
-                                       id="description_id"
-                                       placeholder="Description"
-                                       formControlName="description"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-7 col-sm-offset-2">
-                                <div *ngIf="newFeedForm.controls['description'].touched
-                                            && newFeedForm.controls['description'].hasError('required')"
-                                    class="alert alert-danger">
-                                        Must enter description
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Content-->
-                        <div class="form-group row" >
-                            <div class="col-sm-1 col-sm-offset-1" >
-                              <label for="content_id" class="control-label">Content:</label>
-                            </div>
-                            <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['content'].valid && newFeedForm.controls['content'].touched}">
-                                <textarea type="text"
-                                       class="form-control"
-                                       id="content_id"
-                                       placeholder="Content"
-                                       formControlName="content"
-                                       rows="10"
-                                       required>
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-7 col-sm-offset-2">
-                                <div *ngIf="newFeedForm.controls['content'].touched
-                                            && newFeedForm.controls['content'].hasError('required')"
-                                    class="alert alert-danger">
-                                        Must enter content
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
-            <!--Save Button-->
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" 
-                            class="btn bg-light-green waves-effect btn-sm pull-right my-button" 
-                            (click)="save()"
-                            [disabled]="!newFeedForm.valid">
-                        <span>Save &nbsp;</span>
-                        <i class="fa fa-check"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-        
     </div>
+
+    <!--Create New-->
+    <div *ngIf="createNewRssServerFeedFlag">
+        
+        <!--Close Button-->
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn bg-black waves-effect btn-sm pull-right my-button" 
+                        (click)="closeCreatingNewRssServerFeed()">
+                    <span>Close &nbsp;</span>
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form [formGroup]="newFeedForm" role="form" class="form-horizontal">
+
+                    <!--Title-->
+                    <div class="form-group row" >
+                        <div class="col-sm-1 col-sm-offset-1" >
+                            <label for="title_id" class="control-label">Title:</label>
+                        </div>
+                        <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['title'].valid && newFeedForm.controls['title'].touched}">
+                            <input type="text"
+                                    class="form-control"
+                                    id="title_id"
+                                    placeholder="Title"
+                                    formControlName="title"
+                                    required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-sm-offset-2">
+                            <div *ngIf="newFeedForm.controls['title'].touched
+                                        && newFeedForm.controls['title'].hasError('required')"
+                                class="alert alert-danger">
+                                    Must enter title
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Author-->
+                    <div class="form-group row" >
+                        <div class="col-sm-1 col-sm-offset-1" >
+                            <label for="author_id" class="control-label">Author:</label>
+                        </div>
+                        <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['author'].valid && newFeedForm.controls['author'].touched}">
+                            <input type="text"
+                                    class="form-control"
+                                    id="author_id"
+                                    placeholder="Author"
+                                    formControlName="author"
+                                    required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-sm-offset-2">
+                            <div *ngIf="newFeedForm.controls['author'].touched
+                                        && newFeedForm.controls['author'].hasError('required')"
+                                class="alert alert-danger">
+                                    Must enter author
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Description-->
+                    <div class="form-group row" >
+                        <div class="col-sm-1 col-sm-offset-1" >
+                            <label for="description_id" class="control-label">Description:</label>
+                        </div>
+                        <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['description'].valid && newFeedForm.controls['description'].touched}">
+                            <input type="text"
+                                    class="form-control"
+                                    id="description_id"
+                                    placeholder="Description"
+                                    formControlName="description"
+                                    required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-sm-offset-2">
+                            <div *ngIf="newFeedForm.controls['description'].touched
+                                        && newFeedForm.controls['description'].hasError('required')"
+                                class="alert alert-danger">
+                                    Must enter description
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Content-->
+                    <div class="form-group row" >
+                        <div class="col-sm-1 col-sm-offset-1" >
+                            <label for="content_id" class="control-label">Content:</label>
+                        </div>
+                        <div class="col-sm-7" [ngClass]="{'has-error':!newFeedForm.controls['content'].valid && newFeedForm.controls['content'].touched}">
+                            <textarea type="text"
+                                    class="form-control"
+                                    id="content_id"
+                                    placeholder="Content"
+                                    formControlName="content"
+                                    rows="10"
+                                    required>
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 col-sm-offset-2">
+                            <div *ngIf="newFeedForm.controls['content'].touched
+                                        && newFeedForm.controls['content'].hasError('required')"
+                                class="alert alert-danger">
+                                    Must enter content
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!--Save Button-->
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" 
+                        class="btn bg-light-green waves-effect btn-sm pull-right my-button" 
+                        (click)="save()"
+                        [disabled]="!newFeedForm.valid">
+                    <span>Save &nbsp;</span>
+                    <i class="fa fa-check"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+        
 </div>
 
 
-<div class="row clearfix" [@routerTransition] *ngIf="!rssServerFeeds.length">
-    No feeds yet...
-</div>
+
 

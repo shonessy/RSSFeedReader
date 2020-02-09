@@ -70,6 +70,8 @@ export class ServerFeedsComponent implements OnInit {
       description: "",
       content: ""
     });
+    this.newFeedForm.markAsPristine();
+    this.newFeedForm.markAsUntouched();
   }
 
 }

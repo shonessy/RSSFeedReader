@@ -1,0 +1,15 @@
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.news-selected {
+    background: lightblue;
+}
+
+.sticky-toolbar {
+    position: fixed;
+    top: 80px !important; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}

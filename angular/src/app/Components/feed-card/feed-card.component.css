@@ -1,0 +1,20 @@
+.example-card {
+    max-width: 400px;
+    /* background: lightpink; */
+    background: lightskyblue;
+  }
+  
+  .nasa-header-image {
+    background-image: url('../../../assets/logos/nasa-logo.gif');
+    background-size: cover;
+  }
+
+  .cnn-header-image {
+    background-image: url('../../../assets/logos/cnn-logo.jpg');
+    background-size: cover;
+  }
+
+  .sporting-news-header-image {
+    background-image: url('../../../assets/logos/sporting-news-logo.png');
+    background-size: cover; 
+  }

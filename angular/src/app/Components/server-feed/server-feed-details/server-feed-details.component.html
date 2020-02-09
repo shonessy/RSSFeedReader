@@ -1,0 +1,28 @@
+<div class="row clearfix" [@routerTransition] *ngIf="feed">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    {{feed.title}} <span class="event-detail-header"><i class="fa fa-calendar"></i> <span>{{feed.pubDate | date:'short'}}</span></span>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <div class="form-actions">
+                            <button type="button" [routerLink]="['/app/server-feeds']" class="btn bg-black waves-effect waves-light"><i class="fa fa-arrow-circle-left"></i> Back To Feeds</button>
+                            <button type="button" class="btn bg-red waves-effect waves-light" (click)="deleteFeed()"><i class="fa fa-remove"></i> Delete Feed</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <div>
+                    {{feed.description}}
+                </div>
+                <hr />
+                <div>
+                    {{feed.content}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

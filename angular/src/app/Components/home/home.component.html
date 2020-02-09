@@ -1,0 +1,28 @@
+﻿<div [@routerTransition]>
+    <mat-toolbar color="primary" class="sticky-toolbar">
+        <span>RssFeed News</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+            <mat-button-toggle value="nasa" aria-label="Text align left" (click)="changeNewsFeed('nasa')" [ngClass]="{'news-selected' : newsSite == 'nasa'}">
+                NASA
+            </mat-button-toggle>
+            <mat-button-toggle value="cnn" aria-label="Text align center" (click)="changeNewsFeed('cnn')" [ngClass]="{'news-selected' : newsSite == 'cnn'}">
+                CNN
+            </mat-button-toggle>
+            <mat-button-toggle value="sporting-news" aria-label="Text align right" (click)="changeNewsFeed('sporting-news')" [ngClass]="{'news-selected' : newsSite == 'sporting-news'}">
+                Sporting News
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+      
+        <span class="fill-remaining-space"></span>
+      
+        <span><button mat-button (click)="refreshFeed()" style="height: 30px;" title="Refresh RSS News"><mat-icon >refresh</mat-icon></button></span>
+    </mat-toolbar>
+
+    <div *ngIf="rssFeed">
+        <div class="col-md-6" *ngFor="let feedItem of rssFeed.items">
+            <app-feed-card  [newsSite]="newsSite" [feedItem]="feedItem"></app-feed-card>
+        </div>
+    </div>
+</div>

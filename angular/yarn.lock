@@ -182,6 +182,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/core@^4.0.0":
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.7.tgz#18bdc17bec7bdccb6424402fc90550e15a6d221b"
+  integrity sha512-Jxs6gNTl5KjXflg5vi5rlnokq1johFccN94qSOgDv+Mg1iuGF2i9p7EHkw3Y8jBCVaSLw1qgHE+wMb6KTlJDLA==
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/core@^8.2.4":
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-8.2.4.tgz#72454401dc07c8ed3c64a87d9de70507d6810b14"
@@ -196,10 +203,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/material@^8.1.4":
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.1.4.tgz#8bda747bb023af8ccce2c2d3e9e8dc25f05b3605"
-  integrity sha512-HV1qU63MaOtAc+cWg21Y2ygQKdEDjsGQ/3d3qym9sfR0xU2vvY7OG6gH48BfPeU63oMYxQkhxfoGP8wWMXSU1w==
+"@angular/material@^8.2.3":
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.2.3.tgz#16543e4e06a3fde2651a25cfe126e88e714ae105"
+  integrity sha512-SOczkIaqes+r+9XF/UUiokidfFKBpHkOPIaFK857sFD0FBNPvPEpOr5oHKCG3feERRwAFqHS7Wo2ohVEWypb5A==
   dependencies:
     tslib "^1.7.1"
 
@@ -1362,6 +1369,13 @@ ajv@^6.5.5:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular2-focus@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/angular2-focus/-/angular2-focus-1.1.0.tgz#aec5017a2e6f6db862d96732702c73c719261e88"
+  integrity sha1-rsUBei5vbbhi2WcycCxzxxkmHog=
+  dependencies:
+    "@angular/core" "^4.0.0"
 
 animate.css@^3.5.2:
   version "3.6.1"
@@ -4827,14 +4841,10 @@ lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
-lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-
-lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.17.5:
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log4js@^4.0.0:
   version "4.5.1"

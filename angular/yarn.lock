@@ -182,6 +182,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/core@^4.0.0":
+  version "4.4.7"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.7.tgz#18bdc17bec7bdccb6424402fc90550e15a6d221b"
+  integrity sha512-Jxs6gNTl5KjXflg5vi5rlnokq1johFccN94qSOgDv+Mg1iuGF2i9p7EHkw3Y8jBCVaSLw1qgHE+wMb6KTlJDLA==
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/core@^8.2.4":
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-8.2.4.tgz#72454401dc07c8ed3c64a87d9de70507d6810b14"
@@ -196,10 +203,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/material@^8.1.4":
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.1.4.tgz#8bda747bb023af8ccce2c2d3e9e8dc25f05b3605"
-  integrity sha512-HV1qU63MaOtAc+cWg21Y2ygQKdEDjsGQ/3d3qym9sfR0xU2vvY7OG6gH48BfPeU63oMYxQkhxfoGP8wWMXSU1w==
+"@angular/material@^8.2.3":
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.2.3.tgz#16543e4e06a3fde2651a25cfe126e88e714ae105"
+  integrity sha512-SOczkIaqes+r+9XF/UUiokidfFKBpHkOPIaFK857sFD0FBNPvPEpOr5oHKCG3feERRwAFqHS7Wo2ohVEWypb5A==
   dependencies:
     tslib "^1.7.1"
 
@@ -1362,6 +1369,13 @@ ajv@^6.5.5:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular2-focus@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/angular2-focus/-/angular2-focus-1.1.0.tgz#aec5017a2e6f6db862d96732702c73c719261e88"
+  integrity sha512-mqxklrTgEd9RKrFuNUegWV+e19/cBZ7p9CnyB/jKExPPAmTPT4DNxsL7KYoAljOczK446pqoMKRVOr/nyZOLCA==
+  dependencies:
+    "@angular/core" "^4.0.0"
 
 animate.css@^3.5.2:
   version "3.6.1"
@@ -6131,7 +6145,7 @@ qjobs@^1.1.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/qjobs/-/qjobs-1.2.0.tgz#c45e9c61800bd087ef88d7e256423bdd49e5d071"
 
-qs@6.5.2, qs@~6.5.1, qs@~6.5.2:
+qs@6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
@@ -6139,6 +6153,11 @@ qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+
+qs@~6.5.1, qs@~6.5.2:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 query-string@^4.1.0:
   version "4.3.4"
